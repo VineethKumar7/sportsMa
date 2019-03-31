@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import authenticate, login, logout
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from Appadmin1.forms import UserRegForm,UserRegForm2,PlayerRegForm,TournmentDetails
@@ -16,12 +16,24 @@ class tlistView(ListView):
     content_object_name ='tournament_list'
     model = Tournament
     template_name = 'admin/tour_list.html'
-
+class plistView(ListView):
+    content_object_name ='player_list'
+    model = Player
+    template_name = 'admin/player_list.html'
 
 class tlistUpdate(UpdateView):
     fields = ('eventname', 'venue', 'date', 'time')
     model = Tournament
     template_name = 'admin/tour_form.html'
+
+class plistUpdate(UpdateView):
+    fields = ('firstname', 'middlename', 'lastname', 'location','eventname' )
+    model = Player
+    template_name = 'admin/tour_form.html'
+
+# class plistDelete(DeleteView):
+#     model =Player
+#     success_url = reverse_lazy("adminD:deleteP")
 
 # URL 'dashboard' name='admin_D'
 @login_required

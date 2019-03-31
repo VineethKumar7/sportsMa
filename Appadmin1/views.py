@@ -21,7 +21,7 @@ def playerreg(request):
         preg_form=PlayerRegForm(data=request.POST)
         if preg_form.is_valid():
             preg = preg_form.save()
-            return render(request, 'playerreg',{'form':preg_form})
+            return render(request, "club/successful.html",{'form':preg_form})
     else:
             preg_form=PlayerRegForm()
     return render(request, 'club/playerreg.html',

@@ -1,0 +1,63 @@
+{% extends "club/base3.html"%}
+{% load static from staticfiles %}
+
+{% block body_block %}
+<div class="super_container">
+
+  <!-- News -->
+
+  <div class="news">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="section_title_container">
+            <div class="section_title">
+              <br><br><br><br>
+              <h1>Player registration list</h1>
+              <br><br>
+              <div class="container-table100">
+                <div class="wrap-table100">
+                  <div class="table100">
+                      <table>
+                        <thead>
+                        <tr class="table100-head">
+                          <th class="column1">First name</th>
+                          <th class="column2">Middle Name</th>
+                          <th class="column2">Last Name</th>
+                          <th class="column2">Location</th>
+                          <th class="column2">Eventname</th>
+                          <th class="column2">Edit/Delete</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                          {% for details in player_list %}
+                          <tr class="table100-head">
+                            <td class="column1">{{details.firstname}}</td>
+                            <td class="column1">{{details.middlename}}</td>
+                            <td class="column1">{{details.lastname}}</td>
+                            <td class="column1">{{details.location}}</td>
+                            <td class="column2">{{details.eventname}}</td>
+                            <td class="column2"><a  class= "btn" href="{% url 'adminD:updatep' pk=details.pk %}">Edit</a><br>
+                                <a  href="">Delete</a>
+                            </td>
+                          </tr>
+                          {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row news_row">
+
+
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
