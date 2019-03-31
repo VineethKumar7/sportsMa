@@ -20,10 +20,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Appadmin1.views.userindex, name='index'),
     path('playerreg/',Appadmin1.views.playerreg, name='player'),
+    path('dashboard/',Appadmin1.views.adminD, name='admin_D'),
     path('about/', Appadmin1.views.about, name='about'),
     path('tour2/',Appadmin1.views.tour2,name='tour2'),
     path('contact/', Appadmin1.views.contact,name='contact'),
     path('awa/', Appadmin1.views.awa, name='awa'),
     path('signin/', Appadmin1.views.signin, name='signin'),
-    path('customReg/', Appadmin1.views.custregForm, name='registration'),
+    path('customReg/', Appadmin1.views.mainReg_view, name='registration'),
+    path('logout/', Appadmin1.views.user_logout, name='logout'),
 ]

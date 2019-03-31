@@ -1,11 +1,15 @@
 from django.shortcuts import render
-
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth import authenticate, login, logout
+from django.urls import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
-from Appadmin1.forms import PlayerRegForm,TournmentDetails
-from .models import Users, Login,Player,Tournament,Awards
+from Appadmin1.forms import UserRegForm,UserRegForm2,PlayerRegForm,TournmentDetails
+from django.contrib.auth.models import User
+from .models import UserProfile,Player,Tournament,Awards
+from django.contrib.auth.decorators import user_passes_test
 from django.views.generic import (TemplateView,ListView,
                                   DetailView,CreateView,
                                   UpdateView,DeleteView)
@@ -19,11 +23,36 @@ def playerreg(request):
         preg_form=PlayerRegForm(data=request.POST)
         if preg_form.is_valid():
             preg = preg_form.save()
-            return render(request, 'club/admin_pannel.html',{'form':preg_form})
+            return render(request, 'playerreg',{'form':preg_form})
     else:
             preg_form=PlayerRegForm()
     return render(request, 'club/playerreg.html',
     {'form':preg_form})
+
+# URL 'dashboard' name='admin_D'
+@login_required
+def adminD(request):
+    if request.user.is_superuser:
+        return render(request, "admin/admin_dashboard.html", {})
+    else:
+        return HttpResponse("You don't have permission to access this page")
+
+def mainReg_view(request):
+    if request.method == 'POST':
+        reg_form=UserRegForm(data=request.POST)
+        reg2_form=UserRegForm2(data=request.POST)
+        if reg_form.is_valid() and reg2_form.is_valid():
+            reg = reg_form.save()
+            reg.set_password(reg.password)
+            reg.save()
+            reg2 = reg2_form.save(commit=False)
+            reg2.user = reg
+            return HttpResponseRedirect(reverse('index'))
+    else:
+            reg_form=UserRegForm()
+            reg2_form=UserRegForm2()
+    return render(request, 'club/user_reg.html',
+    {'form1':reg_form, 'form2':reg2_form})
 
 # URL 'about' name='about'
 def about(request):
@@ -56,41 +85,34 @@ def awa(request):
 
 # URL 'signin' name='signin'
 def signin(request):
-    return render(request,'club/login1.html')
-
-# URL 'customReg' name='registration'
-def custregForm(request):
     if request.method == 'POST':
-        type = request.POST.get("type")
-        first_name = request.POST.get('firstname')
-        middle_name = request.POST.get('middlename')
-        last_name = request.POST.get('lastname')
-        address = request.POST.get('address')
-        mobile = request.POST.get('num')
-        location = request.POST.get('loc')
-        gender = request.POST.get('gender')
-        email = request.POST.get('email')
-        password = request.POST.get('password')
-        if type=="user":
-            login = Login()
-            login.email = email
-            login.user_role = type
-            login.password = password
-            login.save()
-
-        reg = Users()
-        reg.firstname = first_name
-        reg.middlename = middle_name
-        reg.lastname = last_name
-        reg.address = address
-        reg.mobile = mobile
-        reg.location = location
-        reg.gender = gender
-        #reg.email=email
-        #reg.password=password
-        reg.login=login
-        reg.save()
-        return render(request, 'club/login1.html')
+        username = request.POST.get('username')
+        password = request.POST.get('pass')
+        user = authenticate(username=username, password=password)
+        if user:
+            print("Username and password are correct")
+            if user.is_active:
+                login(request,user)
+                print("Logged in")
+                if user.is_superuser:
+                    return HttpResponseRedirect(reverse('admin_D'))
+                else:
+                    return HttpResponseRedirect(reverse('index'))
+        else:
+            print("Check the username and password")
     else:
+         return render(request,'club/login1.html')
 
-        return render(request, 'club/user_reg.html')
+def loggedlist(request):
+    queryset = Users.objects.all()
+    context_dict = {
+        'loggedlist' : queryset,
+    }
+    return render(request, "loggedlist.html", context_dict)
+
+@login_required
+def user_logout(request):
+    # Log out the user.
+    logout(request)
+    # Return to homepage.
+    return HttpResponseRedirect(reverse('index'))
