@@ -1,0 +1,53 @@
+{% extends "club/base3.html"%}
+{% load static from staticfiles %}
+
+{% block body_block %}
+<div class="news">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="section_title_container">
+          <div class="section_title">
+            <br><br><br><br>
+            <h1>Edit Tournment Details</h1>
+            <br><br>
+            <div class="container-table100">
+              <div class="wrap-table100">
+                <div class="table100">
+                    <table>
+                      <thead>
+                      <tr class="table100-head">
+                        <th class="column1">Event Name</th>
+                        <th class="column2">Venue</th>
+                        <th class="column2">Date</th>
+                        <th class="column2">Reporting time</th>
+                        <th class="column2">Edit</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                        {% for details in tournament_list %}
+                        <tr class="table100-head">
+                          <td class="column1">{{ details.eventname }}</td>
+                          <td class="column1">{{ details.venue }}</td>
+                          <td class="column1">{{ details.date }}</td>
+                          <td class="column1">{{ details.time }}</td>
+                          <td class="column2"><a class="btn btn-warning" href="{% url 'adminD:update' pk=details.pk %}">Edit</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row news_row">
+
+
+    </div>
+  </div>
+</div>
+{% endblock %}

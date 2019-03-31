@@ -16,16 +16,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import Appadmin1.views
+import admin_dashboard.urls
+from django.conf.urls import include
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Appadmin1.views.userindex, name='index'),
     path('playerreg/',Appadmin1.views.playerreg, name='player'),
-    path('dashboard/',Appadmin1.views.adminD, name='admin_D'),
+    path('dashboard/',include('admin_dashboard.urls', namespace = "adminD")),
     path('about/', Appadmin1.views.about, name='about'),
-    path('tour2/',Appadmin1.views.tour2,name='tour2'),
+    path('tour/',Appadmin1.views.tour2,name='tour'),
     path('contact/', Appadmin1.views.contact,name='contact'),
     path('awa/', Appadmin1.views.awa, name='awa'),
     path('signin/', Appadmin1.views.signin, name='signin'),
     path('customReg/', Appadmin1.views.mainReg_view, name='registration'),
     path('logout/', Appadmin1.views.user_logout, name='logout'),
+
 ]

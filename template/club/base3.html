@@ -14,6 +14,8 @@
   <link rel="stylesheet" type="text/css" href="{% static 'club/plugins/OwlCarousel2-2.3.4/animate.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'club/styles/main_styles.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'club/styles/responsive.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'club/styles/util.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'club/styles/main.css' %}">
 </head>
 
 <body>
@@ -40,7 +42,7 @@
 
 									<div>
 										<ul class="d-flex flex-row align-items-start justify-content-start">
-											<li><a href="#">Tournament Details</a></li>
+											<li><a href="{% url 'tour' %}">Tournament Details</a></li>
 											<li><a href="{% url 'awa' %}">Awards</a></li>
 											<li><a href="{% url 'contact' %}">Contact Us</a></li>&nbsp;&nbsp;
 											&nbsp;&nbsp;&nbsp;&nbsp;

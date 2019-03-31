@@ -1,6 +1,7 @@
 from django.db import models
 from .choises import *
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 # Create your models here.
 # class Login(models.Model):
@@ -40,6 +41,8 @@ class Player(models.Model):
     eventname = models.CharField(max_length=30, default="None", choices = EVENT_CHOICES)
     def __str__(self):
         return self.firstname
+    def get_absolute_url(self):
+        return reverse("adminD:player_list")
 
 class Tournament(models.Model):
     eventname = models.CharField(max_length=30, default="None", choices = EVENT_CHOICES)
@@ -48,6 +51,9 @@ class Tournament(models.Model):
     time = models.TimeField(max_length=30)
     def __str__(self):
         return self.eventname
+
+    def get_absolute_url(self):
+        return reverse("adminD:tour_list")
 
 class Awards(models.Model):
     eventname = models.CharField(max_length=30, default="None", choices = EVENT_CHOICES)

@@ -10,9 +10,7 @@ from Appadmin1.forms import UserRegForm,UserRegForm2,PlayerRegForm,TournmentDeta
 from django.contrib.auth.models import User
 from .models import UserProfile,Player,Tournament,Awards
 from django.contrib.auth.decorators import user_passes_test
-from django.views.generic import (TemplateView,ListView,
-                                  DetailView,CreateView,
-                                  UpdateView,DeleteView)
+
 # URL '' name='index'
 def userindex(request):
     return render(request, "club/index1.html", {})
@@ -29,13 +27,7 @@ def playerreg(request):
     return render(request, 'club/playerreg.html',
     {'form':preg_form})
 
-# URL 'dashboard' name='admin_D'
-@login_required
-def adminD(request):
-    if request.user.is_superuser:
-        return render(request, "admin/admin_dashboard.html", {})
-    else:
-        return HttpResponse("You don't have permission to access this page")
+
 
 def mainReg_view(request):
     if request.method == 'POST':
@@ -95,7 +87,7 @@ def signin(request):
                 login(request,user)
                 print("Logged in")
                 if user.is_superuser:
-                    return HttpResponseRedirect(reverse('admin_D'))
+                    return HttpResponseRedirect(reverse('adminD:admin_D'))
                 else:
                     return HttpResponseRedirect(reverse('index'))
         else:
