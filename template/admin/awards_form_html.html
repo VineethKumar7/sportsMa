@@ -1,95 +1,8 @@
+{% extends "club/base3.html"%}
 {% load static from staticfiles %}
-<html lang="en">
 
-<head>
-	<title>Sports Team</title>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="description" content="Sports Team template project">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="{% static 'club/styles/bootstrap-4.1.2/bootstrap.min.css' %}">
-	<link href="{% static 'club/plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" type="text/css" href="{% static 'club/plugins/OwlCarousel2-2.3.4/owl.carousel.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'club/plugins/OwlCarousel2-2.3.4/owl.theme.default.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'club/plugins/OwlCarousel2-2.3.4/animate.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'club/styles/main_styles.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'club/styles/responsive.css' %}">
-</head>
-
-<body>
-
+{% block body_block %}
 	<div class="super_container">
-
-		<!-- Header -->
-
-		<header class="header">
-
-			<!-- Header Content -->
-			<div class="header_content">
-				<div class="container">
-					<div class="row">
-						<div class="col">
-							<div class="main_nav_container_outer d-flex flex-row align-items-end justify-content-center trans_400">
-								<nav class="main_nav">
-									<div class="main_nav_container d-flex flex-row align-items-center justify-content-lg-start justify-content-center">
-										<div>
-											<!-- Header LIVE -->
-											<ul class="d-flex flex-row align-items-start justify-content-end">
-												<li><a href="index.html">home</a></li>
-												<li><a href="{% url 'about' %}">about the club</a></li>
-												<li class="active"><a href="{% url 'player' %}">Player Registration</a></li>
-											</ul>
-										</div>
-										<div class="logo_container text-center">
-											<div class="trans_400"><a href="#"><img src="{% static 'images/I.png' %}" alt=""></a></div>
-										</div>
-										<div>
-											<ul class="d-flex flex-row align-items-start justify-content-start">
-												<li><a href="{% url 'tour' %}">Tournament Details</a></li>
-												<li><a href="{% url 'awa' %}">Awards</a></li>
-												<li><a href="{% url 'contact' %}">Contact Us</a></li>
-											</ul>
-											<li><a href="http://127.0.0.1:8000/login/">Signin</a></li>
-										</div>
-									</div>
-								</nav>
-								<div class="hamburger">
-									<i class="fa fa-bars trans_200"></i>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Header bar -->
-				<div class="header_bar">
-					<div class="container">
-						<div class="row">
-							<div class="col">
-								<div class="header_bar_content d-flex flex-row align-items-center justify-content-start">
-
-									<div class="header_bar_right ml-auto d-flex flex-row align-items-center justify-content-start">
-
-										<!-- Header LIVE -->
-
-
-										<!-- Sign up / Sign in -->
-										<div class="user_area">
-											<ul class="d-flex flex-row align-items-start justify-content-start">
-
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-			</div>
-
-		</header>
-
 		<!-- Menu -->
 
 		<div class="menu">
@@ -145,27 +58,12 @@
 								<div class="container">
 									<br><br>
 									<div class="col-10">
-										<h3>REGISTRATION</h3>
+										<h3>AWARDS DETAILS</h3>
 									</div>
 									{% csrf_token %}
 									<div class="col-6">
 										<font size="4">
 											<input type="hidden" value="user" name="type">
-											<label>First Name</label>
-											<input class="form-control" type="text" name="firstname" required>
-											<br>
-											<label>Middle Name</label>
-											<input class="form-control" type="text" name="middlename" required>
-											<br>
-											<label>Last Name</label>
-											<input class="form-control" type="text" name="lastname" required>
-											<br>
-											<!--<label>Date Of Birth</label>
-                   <input class="form-control" type="date" name="dob"  required>
-                <br>-->
-											<label>Location</label>
-											<input class="form-control" type="text" name="loc" required>
-											<br>
 											<label>Event Name</label>
 											<select class="form-control" type="text" name="ename" required>
 												<option name="select" value="select"> Select An Option</option>
@@ -174,6 +72,17 @@
 												<option name="3" value="3"> Shot Put</option>
 												<option name="4" value="4"> Javelin Throw</option>
 												<option name="5" value="5"> 1000mtrs Race</option>
+											</select>
+											<label>First Prize</label>
+											<input class="form-control" type="text" name="fprize" required>
+											<br>
+											<label>Second Priza</label>
+											<input class="form-control" type="text" name="sprize" required>
+											<br>
+											<label>Third Prize</label>
+											<input class="form-control" type="text" name="tprize" required>
+											<br>
+
 
 
 											</select>
@@ -184,10 +93,7 @@
 
 										</font>
 									</div>
-									<div class="col-10">
-										<input type="submit" class="btn btn-success" value="Submit">
-										<input type="reset" class="btn btn-reset" value="Cancel">
-									</div>
+
 								</div>
 							</form>
 
@@ -477,7 +383,7 @@
 											<li><a href="team.html">The Team</a></li>
 											<li><a href="#">Tickets</a></li>
 											<li><a href="blog.html">News</a></li>
-											<li><a href="contact.html">Contact</a></li>
+											<li><a href="{% url 'contact' %}">Contact</a></li>
 										</ul>
 									</nav>
 								</div>
@@ -501,6 +407,4 @@
 		<script src="{% static 'club/plugins/progressbar/progressbar.min.js' %}"></script>
 		<script src="{% static 'club/plugins/parallax-js-master/parallax.min.js' %}"></script>
 		<script src="{% static 'club/js/custom.js' %}"></script>
-</body>
-
-</html>
+{% endblock %}

@@ -112,7 +112,7 @@
           <div class="col-lg-4">
             <div class="news_post">
               <div class="news_post_image">
-                <img src="{% static 'club/images/javelin.jpg' %}" alt="">
+                <img src="{% static 'club/images/javelin.jpg' %}" alt="">{% static 'club/' %}
                 <div class="news_post_date">
                   <a href="#">
                     <div class="d-flex flex-column align-items-center justify-content-center">

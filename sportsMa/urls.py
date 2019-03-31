@@ -21,7 +21,6 @@ urlpatterns = [
     path('', Appadmin1.views.userindex, name='index'),
     path('playerreg/',Appadmin1.views.playerreg, name='player'),
     path('about/', Appadmin1.views.about, name='about'),
-    path('tour/',Appadmin1.views.tour,name='tour'),
     path('tour2/',Appadmin1.views.tour2,name='tour2'),
     path('contact/', Appadmin1.views.contact,name='contact'),
     path('awa/', Appadmin1.views.awa, name='awa'),

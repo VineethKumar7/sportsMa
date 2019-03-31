@@ -1,499 +1,196 @@
+{% extends "club/base3.html"%}
 {% load static from staticfiles %}
-<html lang="en">
 
-<head>
-	<title>Sports Team</title>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="description" content="Sports Team template project">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="{% static 'club/styles/bootstrap-4.1.2/bootstrap.min.css' %}">
-	<link href="{% static 'club/plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" type="text/css" href="{% static 'club/plugins/OwlCarousel2-2.3.4/owl.carousel.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'club/plugins/OwlCarousel2-2.3.4/owl.theme.default.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'club/plugins/OwlCarousel2-2.3.4/animate.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'club/styles/main_styles.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'club/styles/responsive.css' %}">
-</head>
+{% block body_block %}
+<div class="super_container">
+	<div class="news">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="section_title_container">
+						<div class="section_title">
+							<br><br><br><br>
+							<h1>Awards</h1>
+						</div>
+						<div class="section">Congrats winners</div>
+						<br><br>
+					</div>
+				</div>
+			</div>
+			<div class="section_subtitle">
+				<h3>
+						First  : 5000Rs <br>
+						Second : 3000Rs	<br>
+						Third  : 1000Rs
+				</h3>
+			</div>
+			<div class="row news_row">
 
-<body>
-
-	<div class="super_container">
-
-		<!-- Header -->
-
-		<header class="header">
-
-			<!-- Header Content -->
-			<div class="header_content">
-				<div class="container">
-					<div class="row">
-						<div class="col">
-							<div class="main_nav_container_outer d-flex flex-row align-items-end justify-content-center trans_400">
-								<nav class="main_nav">
-									<div class="main_nav_container d-flex flex-row align-items-center justify-content-lg-start justify-content-center">
-										<div>
-											<!-- Header LIVE -->
-											<ul class="d-flex flex-row align-items-start justify-content-end">
-												<li><a href="index.html">home</a></li>
-												<li><a href="{% url 'about' %}">about the club</a></li>
-												<li class="active"><a href="#">Player Registration</a></li>
-											</ul>
-										</div>
-										<div class="logo_container text-center">
-											<div class="trans_400"><a href="#"><img src="{% static 'images/I.png' %}" alt=""></a></div>
-										</div>
-										<div>
-											<ul class="d-flex flex-row align-items-start justify-content-start">
-												<li><a href="{% url 'tour' %}">Tournament Details</a></li>
-												<li><a href="blog.html">Awards</a></li>
-												<li><a href="{% url 'contact' %}">Contact Us</a></li>
-											</ul>
-											<li><a href="http://127.0.0.1:8000/login/">Signin</a></li>
-										</div>
+				<!-- News Post -->
+				<div class="col-lg-4">
+					<div class="news_post">
+						<div class="news_post_image">
+							<img src="{% static 'club/images/highjump.jpg' %}" alt="">
+							<div class="news_post_date">
+								<a href="#">
+									<div class="d-flex flex-column align-items-center justify-content-center">
+										<div>1</div>
+										<div>April</div>
 									</div>
-								</nav>
-								<div class="hamburger">
-									<i class="fa fa-bars trans_200"></i>
-								</div>
+								</a>
+							</div>
+						</div>
+						<div class="news_post_content">
+							<div class="tags">
+								<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
+									<li><a href="blog.html">Event</a></li>
+								</ul>
+							</div>
+							<div class="news_post_title"><a href="blog.html">High Jump</a></div>
+							<div class="news_post_text">
+								<p>First:Sabin <br> Second:Sreekanth <br> Third: Reon</p>
+
 							</div>
 						</div>
 					</div>
 				</div>
 
-				<!-- Header bar -->
-				<div class="header_bar">
-					<div class="container">
-						<div class="row">
-							<div class="col">
-								<div class="header_bar_content d-flex flex-row align-items-center justify-content-start">
-
-									<div class="header_bar_right ml-auto d-flex flex-row align-items-center justify-content-start">
-
-										<!-- Header LIVE -->
-
-
-										<!-- Sign up / Sign in -->
-										<div class="user_area">
-											<ul class="d-flex flex-row align-items-start justify-content-start">
-
-											</ul>
-										</div>
+				<!-- News Post -->
+				<div class="col-lg-4">
+					<div class="news_post">
+						<div class="news_post_image">
+							<img src="{% static 'club/images/longjump.jpg' %}" alt="">
+							<div class="news_post_date">
+								<a href="#">
+									<div class="d-flex flex-column align-items-center justify-content-center">
+										<div>1</div>
+										<div>April</div>
 									</div>
-								</div>
+								</a>
+							</div>
+						</div>
+						<div class="news_post_content">
+							<div class="tags">
+								<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
+									<li><a href="blog.html">Event</a></li>
+								</ul>
+							</div>
+							<div class="news_post_title"><a href="blog.html">Long Jump</a></div>
+							<div class="news_post_text">
+								<p>First:Sabin <br> Second:Sreekanth <br> Third: Reon</p>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- News Post -->
+				<div class="col-lg-4">
+					<div class="news_post">
+						<div class="news_post_image">
+							<img src="{% static 'club/images/shortput.jpg' %}" alt="">
+							<div class="news_post_date">
+								<a href="#">
+									<div class="d-flex flex-column align-items-center justify-content-center">
+										<div>1</div>
+										<div>April</div>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="news_post_content">
+							<div class="tags">
+								<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
+									<li><a href="blog.html">Event</a></li>
+								</ul>
+							</div>
+							<div class="news_post_title"><a href="blog.html">Shortput</a></div>
+							<div class="news_post_text">
+								<p>First:Sabin <br> Second:Sreekanth <br> Third: Reon</p>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- News Post -->
+				<div class="col-lg-4">
+					<div class="news_post">
+						<div class="news_post_image">
+							<img src="{% static 'club/images/javelin.jpg' %}" alt="">
+							<div class="news_post_date">
+								<a href="#">
+									<div class="d-flex flex-column align-items-center justify-content-center">
+										<div>1</div>
+										<div>April</div>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="news_post_content">
+							<div class="tags">
+								<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
+									<li><a href="blog.html">Event</a></li>
+								</ul>
+							</div>
+							<div class="news_post_title"><a href="blog.html">Javelin</a></div>
+							<div class="news_post_text">
+								<p>First:Sabin <br> Second:Sreekanth <br> Third: Reon</p>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- News Post -->
+				<div class="col-lg-4">
+					<div class="news_post">
+						<div class="news_post_image">
+							<img src="{% static 'club/images/100 meter.jpg' %}" alt="">
+							<div class="news_post_date">
+								<a href="#">
+									<div class="d-flex flex-column align-items-center justify-content-center">
+										<div>1</div>
+										<div>April</div>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="news_post_content">
+							<div class="tags">
+								<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
+									<li><a href="blog.html">Event</a></li>
+								</ul>
+							</div>
+							<div class="news_post_title"><a href="blog.html">100 meter</a></div>
+							<div class="news_post_text">
+								<p>First:Reon <br> Second:Sreekanth <br> Third: Sabin</p>
+
 							</div>
 						</div>
 					</div>
 				</div>
 
 			</div>
+		</div>
+	</div>
 
-		</header>
 
-		<!-- Menu -->
+	<!-- CTA -->
 
-		<div class="menu">
-			<div class="menu_background">
-				<div class="menu_container d-flex flex-column align-items-end justify-content-start">
-					<div class="menu_close">close</div>
-					<div class="menu_user_area">
-						<ul class="d-flex flex-row align-items-start justify-content-end">
-							<li><a href="#">Sign up</a></li>
-							<li><a href="#">Sign in</a></li>
-						</ul>
-					</div>
-					<nav class="menu_nav">
-						<ul class="text-right">
-							<li><a href="index.html">home</a></li>
-							<li><a href="about">about us</a></li>
-							<li><a href="team.html">the team</a></li>
-							<li><a href="blog.html">news</a></li>
-							<li><a href="contact.html">contact</a></li>
-						</ul>
-					</nav>
-					<div class="menu_links">
-						<ul class="d-flex flex-row align-items-start justify-content-start">
-							<li><a href="#">GET Tickets</a></li>
-							<li><a href="#">Shop</a></li>
-						</ul>
+	<div class="cta">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="cta_content d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-start">
+						<div class="cta_text">Would you like to join our <span>football club?</span></div>
+						<div class="cta_button button ml-md-auto"><a href="#">See More Info</a></div>
 					</div>
 				</div>
 			</div>
 		</div>
-
-		<!-- Home -->
-
+	</div>
 
 
-
-		<!-- Upcoming & Latest -->
-
-		<div class="upcoming_latest">
-			<div class="container">
-				<div class="row">
-					<!-- Upcoming Events -->
-					<div class="col-xl-6">
-						<div class="section_title_container">
-							<div class="section_title light">
-								<h1></h1>
-							</div>
-							<div class="section_subtitle"></div>
-						</div>
-						<div class="custom_list_a">
-
-							<form method="post" action="{% url 'player' %}">
-								<div class="container">
-									<br><br>
-									<div class="col-10">
-										<h3>AWARDS DETAILS</h3>
-									</div>
-									{% csrf_token %}
-									<div class="col-6">
-										<font size="4">
-											<input type="hidden" value="user" name="type">
-											<label>Event Name</label>
-											<select class="form-control" type="text" name="ename" required>
-												<option name="select" value="select"> Select An Option</option>
-												<option name="1" value="1"> High Jump</option>
-												<option name="2" value="2"> Long Jump</option>
-												<option name="3" value="3"> Shot Put</option>
-												<option name="4" value="4"> Javelin Throw</option>
-												<option name="5" value="5"> 1000mtrs Race</option>
-											</select>
-											<label>First Prize</label>
-											<input class="form-control" type="text" name="fprize" required>
-											<br>
-											<label>Second Priza</label>
-											<input class="form-control" type="text" name="sprize" required>
-											<br>
-											<label>Third Prize</label>
-											<input class="form-control" type="text" name="tprize" required>
-											<br>
-
-
-
-											</select>
-											<br>
-
-
-											<br>
-
-										</font>
-									</div>
-
-								</div>
-							</form>
-
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Milestones -->
-
-			<div class="milestones">
-				<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% static 'club/images/milestones.jpg' %}" data-speed="0.8"></div>
-				<div class="container">
-					<div class="row milestones_row">
-
-						<!-- Milestone -->
-						<div class="col-xl-3 col-md-6 milestone_col">
-							<div class="milestone d-flex flex-row align-items-start justify-content-start">
-								<div class="milestone_icon"><img src="{% static 'club/images/icon_1.svg' %}" alt="https://www.flaticon.com/authors/freepik"></div>
-								<div class="milestone_content">
-									<div class="milestone_counter" data-end-value="23" data-sign-after="k">0</div>
-									<div class="milestone_title">Team players</div>
-									<div class="milestone_subtitle">Lorem ipsum dolor sit amet,</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Milestone -->
-						<div class="col-xl-3 col-md-6 milestone_col">
-							<div class="milestone d-flex flex-row align-items-start justify-content-start">
-								<div class="milestone_icon"><img src="{% static 'club/images/icon_2.svg' %}" alt="https://www.flaticon.com/authors/freepik"></div>
-								<div class="milestone_content">
-									<div class="milestone_counter" data-end-value="120">0</div>
-									<div class="milestone_title">Trophies</div>
-									<div class="milestone_subtitle">Lorem ipsum dolor sit amet,</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Milestone -->
-						<div class="col-xl-3 col-md-6 milestone_col">
-							<div class="milestone d-flex flex-row align-items-start justify-content-start">
-								<div class="milestone_icon"><img src="{% static 'club/images/icon_3.svg' %}" alt="https://www.flaticon.com/authors/freepik"></div>
-								<div class="milestone_content">
-									<div class="milestone_counter" data-end-value="7">0</div>
-									<div class="milestone_title">Medals</div>
-									<div class="milestone_subtitle">Lorem ipsum dolor sit amet,</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Milestone -->
-						<div class="col-xl-3 col-md-6 milestone_col">
-							<div class="milestone d-flex flex-row align-items-start justify-content-start">
-								<div class="milestone_icon"><img src="{% static 'club/images/icon_4.svg' %}" alt="https://www.flaticon.com/authors/freepik"></div>
-								<div class="milestone_content">
-									<div class="milestone_counter" data-end-value="36">0</div>
-									<div class="milestone_title">Kicks/Match</div>
-									<div class="milestone_subtitle">Lorem ipsum dolor sit amet,</div>
-								</div>
-							</div>
-						</div>
-
-					</div>
-				</div>
-			</div>
-
-			<!-- Player of the month -->
-
-			<div class="player">
-				<div class="container">
-					<div class="row">
-						<div class="col-xl-6">
-							<div class="player_content">
-								<div class="section_title_container">
-									<div class="section_title">
-										<h1>player of the month</h1>
-									</div>
-									<div class="section_subtitle">What's next this month</div>
-								</div>
-								<div class="player_name_container d-flex flex-row align-items-end justify-content-start">
-									<div class="player_num">83</div>
-									<div class="player_name">Michael Smith</div>
-								</div>
-								<div class="player_text">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan dolor id enim lacinia, sed feugiat ex suscipit. Nunc molestie malesuada pellentesque. Quisque mattis ante ut nisl tristique ornare. Aenean interdum dictum
-										augue, quis egestas erat lacinia in. Proin dictum commodo nulla ut mattis. Pellentesque vel commodo nisi. Donec eget purus eget ex efficitur tristique. Nulla ut mollis justo.</p>
-									<p>Nam turpis nulla, ullamcorper volutpat faucibus ut, facilisis in elit. Nam blandit diam vel felis porta, vitae congue nulla feugiat. Vestibulum rhoncus odio elit, at aliquet sem posuere vel.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-6">
-							<div class="player_images d-flex flex-row align-items-end justify-content-start">
-								<div class="player_image"><img src="{% static 'club/images/player_1.png' %}" alt=""></div>
-								<div class="player_image"><img src="{% static 'club/images/player_2.png' %}" alt=""></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- News -->
-
-			<div class="news">
-				<div class="container">
-					<div class="row">
-						<div class="col">
-							<div class="section_title_container">
-								<div class="section_title">
-									<h1>latest news</h1>
-								</div>
-								<div class="section_subtitle">What's next this month</div>
-							</div>
-						</div>
-					</div>
-					<div class="row news_row">
-
-						<!-- News Post -->
-						<div class="col-lg-4">
-							<div class="news_post">
-								<div class="news_post_image">
-									<img src="{% static 'club/images/news_1.jpg' %}" alt="">
-									<div class="news_post_date">
-										<a href="#">
-											<div class="d-flex flex-column align-items-center justify-content-center">
-												<div>10</div>
-												<div>sept</div>
-											</div>
-										</a>
-									</div>
-								</div>
-								<div class="news_post_content">
-									<div class="tags">
-										<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-											<li><a href="blog.html">News</a></li>
-										</ul>
-									</div>
-									<div class="news_post_title"><a href="blog.html">T-shirt release date</a></div>
-									<div class="news_post_text">
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan dolor id enim lacinia, sed feugiat ex suscipit.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- News Post -->
-						<div class="col-lg-4">
-							<div class="news_post">
-								<div class="news_post_image">
-									<img src="{% static 'club/images/news_2.jpg' %}" alt="">
-									<div class="news_post_date">
-										<a href="#">
-											<div class="d-flex flex-column align-items-center justify-content-center">
-												<div>10</div>
-												<div>sept</div>
-											</div>
-										</a>
-									</div>
-								</div>
-								<div class="news_post_content">
-									<div class="tags">
-										<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-											<li><a href="blog.html">News</a></li>
-										</ul>
-									</div>
-									<div class="news_post_title"><a href="blog.html">Junior league Openings</a></div>
-									<div class="news_post_text">
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan dolor id enim lacinia, sed feugiat ex suscipit.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- News Post -->
-						<div class="col-lg-4">
-							<div class="news_post">
-								<div class="news_post_image">
-									<img src="{% static 'club/images/news_3.jpg' %}" alt="">
-									<div class="news_post_date">
-										<a href="#">
-											<div class="d-flex flex-column align-items-center justify-content-center">
-												<div>10</div>
-												<div>sept</div>
-											</div>
-										</a>
-									</div>
-								</div>
-								<div class="news_post_content">
-									<div class="tags">
-										<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-											<li><a href="blog.html">News</a></li>
-										</ul>
-									</div>
-									<div class="news_post_title"><a href="blog.html">The summer transfers</a></div>
-									<div class="news_post_text">
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan dolor id enim lacinia, sed feugiat ex suscipit.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-
-					</div>
-				</div>
-			</div>
-
-			<!-- CTA -->
-
-			<div class="cta">
-				<div class="container">
-					<div class="row">
-						<div class="col">
-							<div class="cta_content d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-start">
-								<div class="cta_text">Would you like to join our <span>football club?</span></div>
-								<div class="cta_button button ml-md-auto"><a href="#">See More Info</a></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Footer -->
-
-			<footer class="footer">
-				<div class="footer_container">
-					<div class="container">
-						<div class="row">
-							<div class="col-lg-5 order-lg-1 order-3">
-								<div class="footer_image d-flex flex-column align-items-lg-start align-items-center justify-content-end">
-									<div><img src="{% static 'club/images/footer.png'%}" alt=""></div>
-								</div>
-							</div>
-							<div class="col-lg-3 order-lg-2 order-1">
-								<div class="footer_contact_info">
-									<div class="footer_logo"><a href="#"><img src="{% static 'images/footer_logo.png' %}" alt=""></a></div>
-									<div class="footer_contact_list">
-										<ul>
-											<li class="d-flex flex-row align-items-start justify-content-start">
-												<div>Address</div>
-												<div>Tharappel House Palai</div>
-											</li>
-											<li class="d-flex flex-row align-items-start justify-content-start">
-												<div>Phone</div>
-												<div>+91 9496982541</div>
-											</li>
-											<li class="d-flex flex-row align-items-start justify-content-start">
-												<div>E-mail</div>
-												<div>blzntharappel@gmail.com</div>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 order-lg-3 order-2">
-								<div class="newsletter">
-									<div class="newsletter_title">Subscribe to newsletter</div>
-									<div class="newsletter_form_container">
-										<form action="#" class="newsletter_form" id="newsletter_form">
-											<div class="d-flex flex-row align-items-start justify-content-start">
-												<input type="email" class="newsletter_input" placeholder="Your e-mail address" required="required">
-												<button class="newsletter_button">Submit</button>
-											</div>
-										</form>
-										<div class="newsletter_text">
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="footer_bar">
-					<div class="container">
-						<div class="row">
-							<div class="col">
-								<div class="footer_bar_content d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-start">
-									<div class="cr order-md-1 order-2">
-										<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-										Copyright &copy;<script>
-											document.write(new Date().getFullYear());
-										</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-										<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-									</div>
-									<nav class="footer_nav ml-md-auto order-md-2 order-1">
-										<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-											<li><a href="index.html">Home</a></li>
-											<li><a href="team.html">The Team</a></li>
-											<li><a href="#">Tickets</a></li>
-											<li><a href="blog.html">News</a></li>
-											<li><a href="{% url 'contact' %}">Contact</a></li>
-										</ul>
-									</nav>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</footer>
-		</div>
-
-		<script src="{% static 'club/js/jquery-3.3.1.min.js' %}"></script>
-		<script src="{% static 'club/styles/bootstrap-4.1.2/popper.js' %}"></script>
-		<script src="{% static 'club/styles/bootstrap-4.1.2/bootstrap.min.js' %}"></script>
-		<script src="{% static 'club/plugins/greensock/TweenMax.min.js' %}"></script>
-		<script src="{% static 'club/plugins/greensock/TimelineMax.min.js' %}"></script>
-		<script src="{% static 'club/plugins/scrollmagic/ScrollMagic.min.js' %}"></script>
-		<script src="{% static 'club/plugins/greensock/animation.gsap.min.js' %}"></script>
-		<script src="{% static 'club/plugins/greensock/ScrollToPlugin.min.js' %}"></script>
-		<script src="{% static 'club/plugins/OwlCarousel2-2.3.4/owl.carousel.js' %}"></script>
-		<script src="{% static 'club/plugins/easing/easing.js' %}"></script>
-		<script src="{% static 'club/plugins/progressbar/progressbar.min.js' %}"></script>
-		<script src="{% static 'club/plugins/parallax-js-master/parallax.min.js' %}"></script>
-		<script src="{% static 'club/js/custom.js' %}"></script>
-</body>
-
-</html>>
+</div>
+{% endblock %}

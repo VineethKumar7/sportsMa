@@ -29,17 +29,22 @@ def playerreg(request):
 def about(request):
     return render(request, "club/about.html",{})
 
-# URL 'tour' name='tour'
-def tour(request):
-    t = Tournament.objects.all()
-    template = loader.get_template("club/tournament.html")
-    context = {"t":t}
-    return HttpResponse(template.render(context,request))
+# # URL 'tour' name='tour'
+# def tour(request):
+#     t = Tournament.objects.all()
+#     template = loader.get_template("club/tournament.html")
+#     context = {"t":t}
+#     return HttpResponse(template.render(context,request))
+#
+# # URL 'tour2' name='tour2'
+# def tour2(request):
+#     tour=TournmentDetails()
+#     return render(request, 'club/tournament2.html', {'form':tour})
 
 # URL 'tour2' name='tour2'
 def tour2(request):
-    tour=TournmentDetails()
-    return render(request, 'club/tournament2.html', {'form':tour})
+    return render(request, 'club/tournament.html', {})
+
 
 # URL 'contact' name='contact'
 def contact(request):

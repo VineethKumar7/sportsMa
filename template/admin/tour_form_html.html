@@ -1,0 +1,71 @@
+{% extends "club/base3.html"%}
+{% load static from staticfiles %}
+
+{% block body_block %}
+<div class="super_container">
+
+	<!-- Home -->
+
+
+
+
+	<!-- Upcoming & Latest -->
+
+	<div class="upcoming_latest">
+		<div class="container">
+			<div class="row">
+				<!-- Upcoming Events -->
+				<div class="col-xl-6">
+					<div class="section_title_container">
+						<div class="section_title light"><h1></h1></div>
+						<div class="section_subtitle"></div>
+					</div>
+					<div class="custom_list_a">
+
+					<form method="post" action="{% url 'player' %}">
+    <div class="container">
+		<br><br>
+           <div class="col-10">
+                <h3>TOURNAMENT DETAILS</h3>
+            </div>
+           {% csrf_token %}
+            <div class="col-6">
+                <font size="4">
+                    <input type="hidden" value="user" name="type">
+				 <label>Event Name</label>
+                <select class="form-control" type="text" name="ename" required>
+				<option name = "select" value = "select"> Select An Option</option>
+				<option name = "1" value = "1"> High Jump</option>
+				<option name = "2" value = "2"> Long Jump</option>
+				<option name = "3" value = "3"> Shot Put</option>
+				<option name = "4" value = "4"> Javelin Throw</option>
+				<option name = "5" value = "5"> 1000mtrs Race</option>
+				</select>
+                <label>Venue</label>
+                <input class="form-control" type="text" name="venue"  required>
+                <br>
+                    <label>Date</label>
+                <input class="form-control" type="date" name="date" required>
+                <br>
+                <label>Reporting Time</label>
+                <input class="form-control" type="time" name="time" required>
+                <br>
+
+
+
+				</select>
+                <br>
+
+
+                <br>
+
+                </font>
+            </div>
+
+    </div>
+</form>
+
+</div>
+</div>
+</div>
+{% endblock %}
