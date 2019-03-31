@@ -62,3 +62,5 @@ class Awards(models.Model):
     third = models.CharField(max_length=30)
     def __str__(self):
         return self.eventname
+    def get_absolute_url(self):
+        return reverse("adminD:awards_list")

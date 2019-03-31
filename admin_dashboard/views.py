@@ -21,6 +21,11 @@ class plistView(ListView):
     model = Player
     template_name = 'admin/player_list.html'
 
+class alistView(ListView):
+    content_object_name ='awards_list'
+    model = Awards
+    template_name = 'admin/awards_list.html'
+
 class tlistUpdate(UpdateView):
     fields = ('eventname', 'venue', 'date', 'time')
     model = Tournament
@@ -31,9 +36,15 @@ class plistUpdate(UpdateView):
     model = Player
     template_name = 'admin/tour_form.html'
 
-# class plistDelete(DeleteView):
-#     model =Player
-#     success_url = reverse_lazy("adminD:deleteP")
+class alistUpdate(UpdateView):
+    fields = ('eventname', 'first', 'second', 'third' )
+    model = Awards
+    template_name = 'admin/tour_form.html'
+
+class plistDelete(DeleteView):
+    model =Player
+    success_url = reverse_lazy("adminD:player_list")
+    template_name = 'admin/player_confirm_delete.html'
 
 # URL 'dashboard' name='admin_D'
 @login_required

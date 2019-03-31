@@ -1,0 +1,18 @@
+{% extends "club/base3.html"%}
+{% load static from staticfiles %}
+
+{% block body_block %}
+
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+
+<h1>Delete {{player.firstname}}?</h1>
+<form method="post">
+  {% csrf_token %}
+
+  <input type="submit" class="btn btn-danger" value="Delete">
+  <a class="{% url 'adminD:player_list' %}" href="#">Cancel</a>
+  <br><br><br><br><br><br>
+  <br><br><br><br><br><br>
+</form>
+{% endblock %}

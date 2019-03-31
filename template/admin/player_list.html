@@ -37,8 +37,8 @@
                             <td class="column1">{{details.lastname}}</td>
                             <td class="column1">{{details.location}}</td>
                             <td class="column2">{{details.eventname}}</td>
-                            <td class="column2"><a  class= "btn" href="{% url 'adminD:updatep' pk=details.pk %}">Edit</a><br>
-                                <a  href="">Delete</a>
+                            <td class="column2"><a class="btn" href="{% url 'adminD:updatep' pk=details.pk %}">Edit</a><br>
+                                <a class="btn" href="{% url 'adminD:deletep' pk=details.pk %}">Delete</a>
                             </td>
                           </tr>
                           {% endfor %}
