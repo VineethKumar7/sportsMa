@@ -1,0 +1,124 @@
+{% load static from staticfiles %}
+<html lang="en">
+
+<head>
+  <title>Sports Team</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Sports Team template project">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="{% static 'club/styles/bootstrap-4.1.2/bootstrap.min.css' %}">
+  <link href="{% static 'club/plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="{% static 'club/plugins/OwlCarousel2-2.3.4/owl.carousel.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'club/plugins/OwlCarousel2-2.3.4/owl.theme.default.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'club/plugins/OwlCarousel2-2.3.4/animate.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'club/styles/main_styles.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'club/styles/responsive.css' %}">
+</head>
+
+<body>
+  <!-- Header -->
+
+  <header class="header">
+
+    <!-- Header Content -->
+    <div class="header_content">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="main_nav_container_outer d-flex flex-row align-items-end justify-content-center trans_400">
+              <nav class="main_nav">
+                <div class="main_nav_container d-flex flex-row align-items-center justify-content-lg-start justify-content-center">
+                  <div>
+                    <!-- Header LIVE -->
+
+                    <ul class="d-flex flex-row align-items-start justify-content-end">
+                      <li class="active"><a href="{% url 'index' %}">home</a></li>
+                      <li><a href="{% url 'about' %}">about</a></li>
+                      <li><a href="{% url 'player' %}">Player Registration</a></li>
+                      &nbsp;<li><a href="{% url 'signin' %}">Sign In</a></li>
+                    </ul>
+                  </div>
+                  <div class="logo_container text-center">
+                    <div class="trans_400"><a href="#"><img src="{% static 'club/images/btklogo.png' %}" alt=""></a></div>
+                  </div>
+                  <div>
+                    <ul class="d-flex flex-row align-items-start justify-content-start">
+                      <li><a href="{% url 'tour2' %}">Tournament Details</a></li>
+                      <li><a href="{% url 'awa' %}">Award</a></li>
+                      <li><a href="{% url 'contact' %}">contact</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+              <div class="hamburger">
+                <i class="fa fa-bars trans_200"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Header bar -->
+      <div class="header_bar">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="header_bar_content d-flex flex-row align-items-center justify-content-start">
+
+                <div class="header_bar_right ml-auto d-flex flex-row align-items-center justify-content-start">
+
+                  <!-- Header LIVE -->
+
+
+                  <!-- Sign up / Sign in -->
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </header>
+
+  {% block body_block %}
+  {% endblock %}
+
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  </div>
+  <nav class="footer_nav ml-md-auto order-md-2 order-1">
+    <ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
+      <li><a href="club/index.html">Home</a></li>
+      <li><a href="club/team.html">The Team</a></li>
+      <li><a href="#">Tickets</a></li>
+      <li><a href="blog.html">News</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </footer>
+  </div>
+
+  <script src="{% static 'club/js/jquery-3.3.1.min.js' %}"></script>
+  <script src="{% static 'club/styles/bootstrap-4.1.2/popper.js' %}"></script>
+  <script src="{% static 'club/styles/bootstrap-4.1.2/bootstrap.min.js' %}"></script>
+  <script src="{% static 'club/plugins/greensock/TweenMax.min.js' %}"></script>
+  <script src="{% static 'club/plugins/greensock/TimelineMax.min.js' %}"></script>
+  <script src="{% static 'club/plugins/scrollmagic/ScrollMagic.min.js' %}"></script>
+  <script src="{% static 'club/plugins/greensock/animation.gsap.min.js' %}"></script>
+  <script src="{% static 'club/plugins/greensock/ScrollToPlugin.min.js' %}"></script>
+  <script src="{% static 'club/plugins/OwlCarousel2-2.3.4/owl.carousel.js' %}"></script>
+  <script src="{% static 'club/plugins/easing/easing.js' %}"></script>
+  <script src="{% static 'club/plugins/progressbar/progressbar.min.js' %}"></script>
+  <script src="{% static 'club/plugins/parallax-js-master/parallax.min.js' %}"></script>
+  <script src="{% static 'club/js/custom.js' %}"></script>
+</body>
+
+</html>
