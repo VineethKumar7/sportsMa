@@ -41,9 +41,9 @@
 									<li><a href="">Event</a></li>
 								</ul>
 							</div>
-							<div class="news_post_title"><a href="{% url 'player' %}">High Jump</a></div>
+							<div class="news_post_title"><a href="{% url 'player' %}">{{high.eventname}}</a></div>
 							<div class="news_post_text">
-								<p>Venue:DB1 <br> Date:1 April <br> Reporting time: 10AM</p>
+								<p>Venue: {{high.venue}} <br> Date: {{high.date}} <br> Reporting time: {{high.time}}</p>
 
 							</div>
 						</div>
@@ -70,9 +70,9 @@
 									<li><a href="blog.html">Event</a></li>
 								</ul>
 							</div>
-							<div class="news_post_title"><a href="{% url 'player' %}">Long Jump</a></div>
+							<div class="news_post_title"><a href="{% url 'player' %}">{{long.eventname}}</a></div>
 							<div class="news_post_text">
-								<p>Venue:DB2 <br> Date:1 April <br> Reporting time: 9AM</p>
+								<p>Venue:{{long.venue}} <br> Date:{{long.date}} <br> Reporting time: {{long.time}}</p>
 
 							</div>
 						</div>
@@ -99,9 +99,9 @@
 									<li><a href="">Event</a></li>
 								</ul>
 							</div>
-							<div class="news_post_title"><a href="{% url 'player' %}">Shortput</a></div>
+							<div class="news_post_title"><a href="{% url 'player' %}">{{shortput.eventname}}</a></div>
 							<div class="news_post_text">
-								<p>Venue:DB3 <br> Date:1 April <br> Reporting time: 10:30AM</p>
+								<p>Venue: {{shortput.venue}} <br> Date: {{shortput.date}} <br> Reporting time: {{shortput.time}}</p>
 
 							</div>
 						</div>
@@ -128,9 +128,9 @@
 									<li><a href="">Event</a></li>
 								</ul>
 							</div>
-							<div class="news_post_title"><a href="{% url 'player' %}">Javelin</a></div>
+							<div class="news_post_title"><a href="{% url 'player' %}">{{javelin.eventname}}</a></div>
 							<div class="news_post_text">
-								<p>Venue:DB2 <br> Date:1 April <br> Reporting time: 11AM</p>
+								<p>Venue:{{javelin.venue}} <br> Date:{{javelin.date}} <br> Reporting time: {{javelin.time}}</p>
 
 							</div>
 						</div>
@@ -157,9 +157,9 @@
 									<li><a href="">Event</a></li>
 								</ul>
 							</div>
-							<div class="news_post_title"><a href="{% url 'player' %}">100 meter</a></div>
+							<div class="news_post_title"><a href="{% url 'player' %}">{{meter.eventname}}</a></div>
 							<div class="news_post_text">
-								<p>Venue:DB1 <br> Date:1 April <br> Reporting time: 10AM</p>
+								<p>Venue: {{meter.venue}} <br> Date: {{meter.date}} <br> Reporting time: {{meter.time}}</p>
 
 							</div>
 						</div>

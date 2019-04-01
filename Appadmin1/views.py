@@ -64,7 +64,13 @@ def about(request):
 
 # URL 'tour2' name='tour2'
 def tour2(request):
-    return render(request, 'club/tournament.html', {})
+    high= Tournament.objects.get(eventname= "High Jump")
+    long= Tournament.objects.get(eventname= "Long Jump")
+    javelin= Tournament.objects.get(eventname= "Javelin")
+    shortput= Tournament.objects.get(eventname= "Shortput")
+    meter= Tournament.objects.get(eventname= "100 meter")
+    return render(request, 'club/tournament.html', {'long':long,'high':high,'javelin':javelin,
+                                                        'shortput':shortput,'meter':meter })
 
 
 # URL 'contact' name='contact'
@@ -73,7 +79,13 @@ def contact(request):
 
 # URL 'awa' name='awa'
 def awa(request):
-    return render(request,'club/awards.html')
+    high= Awards.objects.get(eventname= "High Jump")
+    long= Awards.objects.get(eventname= "Long Jump")
+    javelin= Awards.objects.get(eventname= "Javelin")
+    shortput= Awards.objects.get(eventname= "Shortput")
+    meter= Awards.objects.get(eventname= "100 meter")
+    return render(request,'club/awards.html', {'long':long,'high':high,'javelin':javelin,
+                                                        'shortput':shortput,'meter':meter })
 
 # URL 'signin' name='signin'
 def signin(request):
